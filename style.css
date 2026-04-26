@@ -258,3 +258,93 @@ p {
 .tab.active {
   color: #111;
 }
+.screen.active {
+  animation: screenFade 0.22s ease;
+}
+
+@keyframes screenFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.routine-item {
+  transition: transform 0.22s ease, box-shadow 0.2s ease;
+}
+
+.routine-item:active {
+  transform: scale(0.985);
+}
+
+.routine-item.done {
+  animation: checkPop 0.22s ease;
+}
+
+@keyframes checkPop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.035);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.check-btn {
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.routine-item.done .check-btn {
+  animation: checkBounce 0.28s ease;
+}
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card {
+  animation: cardUp 0.24s ease;
+}
+
+@keyframes cardUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delete-btn {
+  transition: opacity 0.2s ease;
+}
+
+.routine-wrap.open .delete-btn {
+  animation: deleteAppear 0.2s ease;
+}
+
+@keyframes deleteAppear {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
