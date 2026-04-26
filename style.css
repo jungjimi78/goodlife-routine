@@ -77,8 +77,11 @@ p {
 
 .hidden-date {
   position: absolute;
+  left: 18px;
+  top: 86px;
+  width: 180px;
+  height: 34px;
   opacity: 0;
-  pointer-events: none;
 }
 
 .add-btn {
