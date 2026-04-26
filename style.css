@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #f7f7f7;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/* 전체 앱 */
+.app {
+  width: min(100vw, 460px);
+  min-height: 100dvh;
+  background: #f7f7f7;
+  position: relative;
+}
+
+/* 화면 */
+.screen {
+  display: none;
+  min-height: 100dvh;
+  padding: 34px 18px 90px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* 상단 */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+}
+
+p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+/* 날짜 버튼 */
+.date-button {
+  margin-top: 6px;
+  border: 0;
+  background: transparent;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.hidden-date {
+  position: absolute;
+  opacity: 0;
+}
+
+/* 추가 버튼 */
+.add-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 26px;
+}
+
+/* 카드 */
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 13px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+  margin-bottom: 10px;
+}
+
+/* 루틴 리스트 */
+.routine-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* 삭제 영역 */
+.routine-wrap {
+  position: relative;
+  height: 46px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #ff3b30;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 72px;
+  height: 46px;
+  border: 0;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* 루틴 */
+.routine-item {
+  position: relative;
+  z-index: 2;
+  height: 46px;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px 0 15px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  transition: transform 0.18s ease;
+}
+
+.routine-wrap.open .routine-item {
+  transform: translateX(-72px);
+}
+
+.routine-title {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+/* 체크 */
+.check-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #111;
+  background: #fff;
+  color: #fff;
+}
+
+.routine-item.done .check-btn {
+  background: #111;
+  color: #fff;
+}
+
+/* 노트 */
+.note-card textarea {
+  width: 100%;
+  height: 62px;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: #fafafa;
+  padding: 10px;
+  outline: none;
+}
+
+/* 그래프 */
+.chart-card canvas {
+  height: 120px !important;
+  margin-top: 8px;
+}
+
+/* 달력 */
+.week-row,
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.week-row {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 7px;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1f1f1;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.day.done {
+  color: #fff;
+}
+
+.day.empty {
+  background: transparent;
+}
+
+/* 하단 탭 */
+.tabs {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(100vw, 460px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #eee;
+  padding: 10px 12px;
+}
+
+.tab {
+  border: 0;
+  background: transparent;
+  color: #999;
+  font-weight: 700;
+}
+
+.tab.active {
+  color: #111;
+}
