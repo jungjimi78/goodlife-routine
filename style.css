@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #f7f7f7;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: min(100vw, 460px);
+  height: 100dvh;
+  background: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen {
+  display: none;
+  height: 100dvh;
+  padding: 34px 18px 78px;
+  overflow: hidden;
+}
+
+.screen.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+p {
+  color: #666;
+  font-size: 13px;
+}
+
+.add-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 26px;
+}
+
+.date-picker {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background: #fff;
+  padding: 0 14px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 13px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+  margin-bottom: 10px;
+}
+
+.routine-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.routine-item {
+  height: 46px;
+  display: grid;
+  grid-template-columns: 1fr 30px 54px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 0 15px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+}
+
+.routine-title {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.check-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #111;
+  background: #fff;
+  color: #fff;
+}
+
+.routine-item.done .check-btn {
+  background: #111;
+  color: #fff;
+}
+
+.delete-btn {
+  border: 0;
+  border-radius: 11px;
+  background: #ff3b30;
+  color: #fff;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.note-card textarea {
+  width: 100%;
+  height: 62px;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: #fafafa;
+  padding: 10px;
+  outline: none;
+}
+
+.chart-card {
+  margin-top: auto;
+}
+
+.chart-card canvas {
+  height: 120px !important;
+  margin-top: 8px;
+}
+
+.week-row,
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.week-row {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 7px;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1f1f1;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.day.done {
+  background: #111;
+  color: #fff;
+}
+
+.day.empty {
+  background: transparent;
+}
+
+.tabs {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(100vw, 460px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(255,255,255,0.9);
+  border-top: 1px solid #eee;
+  padding: 10px 12px;
+}
+
+.tab {
+  border: 0;
+  background: transparent;
+  color: #999;
+  font-weight: 700;
+}
+
+.tab.active {
+  color: #111;
+}
