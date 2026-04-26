@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f7f7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="갓생 루틴" />
+  <title>갓생 루틴</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="screen active" id="homeScreen">
+      <header class="top">
+        <div>
+          <h1>갓생 루틴</h1>
+          <p id="todayLabel">오늘</p>
+        </div>
+        <button class="circle-btn" id="addRoutineBtn">+</button>
+      </header>
+
+      <section class="date-bar card">
+        <button class="ghost-btn" id="prevDay">‹</button>
+        <input type="date" id="datePicker" />
+        <button class="ghost-btn" id="nextDay">›</button>
+      </section>
+
+      <section class="routine-list" id="routineList"></section>
+
+      <section class="card note-card">
+        <div class="card-head">
+          <div>
+            <h3>감사 노트</h3>
+            <p>오늘 감사한 일을 적어봐.</p>
+          </div>
+          <span>☺</span>
+        </div>
+        <textarea id="gratitudeNote" maxlength="300" placeholder="예) 오늘 날씨가 좋아서 기분이 좋았다."></textarea>
+      </section>
+
+      <section class="card note-card">
+        <div class="card-head">
+          <div>
+            <h3>오늘의 중요한 일</h3>
+            <p>오늘 가장 중요한 1~3가지를 적어봐.</p>
+          </div>
+          <span>☆</span>
+        </div>
+        <textarea id="importantNote" maxlength="300" placeholder="1.&#10;2.&#10;3."></textarea>
+      </section>
+
+      <section class="card week-card">
+        <p class="eyebrow">이번 주 완료</p>
+        <h2 id="weekDoneText">0개</h2>
+        <p id="weekSubText">일주일 루틴 체크</p>
+        <canvas id="homeChart"></canvas>
+      </section>
+    </section>
+
+    <section class="screen" id="recordScreen">
+      <header class="top center">
+        <button class="ghost-btn" id="prevMonth">‹</button>
+        <div>
+          <h1>기록</h1>
+          <p id="monthTitle"></p>
+        </div>
+        <button class="ghost-btn" id="nextMonth">›</button>
+      </header>
+
+      <section class="card month-card">
+        <p class="eyebrow">한달 루틴 체크</p>
+        <h2 id="monthTotalText">0개</h2>
+        <p id="monthSubText">한눈에 보는 월간 기록</p>
+        <canvas id="monthChart"></canvas>
+      </section>
+
+      <section class="card compact-calendar-card">
+        <div class="week-row">
+          <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+        </div>
+        <div class="month-grid" id="monthGrid"></div>
+      </section>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="homeScreen"><span>⌂</span><small>홈</small></button>
+      <button class="tab" data-tab="recordScreen"><span>▥</span><small>기록</small></button>
+    </nav>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
