@@ -240,3 +240,14 @@ p {
 .tab.active {
   color: #111;
 }
+.routine-wrap.dragging {
+  opacity: 0.45;
+}
+
+.routine-wrap {
+  cursor: grab;
+}
+
+.routine-wrap:active {
+  cursor: grabbing;
+}
