@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>갓생 루틴</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <section class="screen active" id="homeScreen">
+      <header class="top">
+        <div>
+          <h1>갓생 루틴</h1>
+          <button id="dateButton" class="date-button"></button>
+          <input type="date" id="datePicker" class="hidden-date" />
+        </div>
+        <button id="addRoutineBtn" class="add-btn">+</button>
+      </header>
+
+      <section id="routineList" class="routine-list"></section>
+
+      <section class="card note-card">
+        <h3>감사 노트</h3>
+        <textarea id="gratitudeNote"></textarea>
+      </section>
+
+      <section class="card note-card">
+        <h3>오늘의 중요한 일</h3>
+        <textarea id="importantNote"></textarea>
+      </section>
+
+      <section class="card chart-card">
+        <div class="chart-head">
+          <div>
+            <h3>일주일 체크</h3>
+            <p id="weekCountText">0개 완료</p>
+          </div>
+
+          <select id="colorPicker" class="color-picker">
+            <option value="#111111">Black</option>
+            <option value="#ff3b30">Red</option>
+            <option value="#ff9500">Orange</option>
+            <option value="#ffcc00">Yellow</option>
+            <option value="#34c759">Green</option>
+            <option value="#007aff">Blue</option>
+            <option value="#5856d6">Purple</option>
+            <option value="#ff2d55">Pink</option>
+          </select>
+        </div>
+
+        <canvas id="weekChart"></canvas>
+      </section>
+    </section>
+
+    <section class="screen" id="recordScreen">
+      <header class="top">
+        <div>
+          <h1>기록</h1>
+          <p id="monthLabel"></p>
+        </div>
+      </header>
+
+      <section class="card chart-card">
+        <h3>한달 기록</h3>
+        <canvas id="monthChart"></canvas>
+      </section>
+
+      <section class="card calendar-card">
+        <div class="week-row">
+          <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+        </div>
+        <div id="monthGrid" class="month-grid"></div>
+      </section>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="homeScreen">홈</button>
+      <button class="tab" data-tab="recordScreen">기록</button>
+    </nav>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
